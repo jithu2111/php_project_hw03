@@ -21,6 +21,7 @@ function generate_header($title) {
     </head>
 
     <body>
+        <div id="container">
         <div id="logo">
             <h1>
                 <span>nerd</span><span class="luv">Luv</span><sup>tm</sup>
@@ -45,9 +46,13 @@ function generate_footer() {
             </p>
             <p>Results and page (C) Copyright NerdLuv Inc.</p>
             <p>
-                <a href="index.php">&#8634; Back to front page</a>
+                <a href="index.php">
+                    <img src="back.png" alt="back" />
+                    Back to front page
+                </a>
             </p>
         </div>
+        </div> <!-- end #container -->
     </body>
     </html>
     <?php
