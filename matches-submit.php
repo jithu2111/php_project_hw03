@@ -87,6 +87,19 @@ $user = find_single($name);
 $singles = get_all_singles();
 
 generate_header("NerdieLuv - Matches for $name");
+
+/* If the user was not found in the file, show an error and stop */
+if ($user === null) {
+    ?>
+        <div class="error">
+            <h2>Error! Invalid data.</h2>
+            <p>We're sorry. User &quot;<?= $name ?>&quot; was not found.
+               Please go back and try again.</p>
+        </div>
+    <?php
+    generate_footer();
+    exit;
+}
 ?>
 
         <h3>Matches for <?= $name ?></h3>
