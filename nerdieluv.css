@@ -1,0 +1,218 @@
+/*
+ * NerdieLuv - Dating site for single geeks
+ * Main stylesheet
+ */
+
+/* === General Body & Page Layout === */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* === Header / Logo === */
+#logo h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 36px;
+    color: #630a30;
+    margin: 0;
+    padding: 10px 0 0 10px;
+}
+
+#logo h1 span.luv {
+    color: #2b48c1;
+}
+
+#logo h1 sup {
+    font-size: 12px;
+    color: #999;
+}
+
+#logo p {
+    font-size: 12px;
+    color: #666;
+    margin: 0 0 10px 10px;
+    font-style: italic;
+}
+
+/* === Navigation / Welcome Links === */
+h2 {
+    font-size: 16px;
+    margin: 20px 0 10px 10px;
+}
+
+#welcome a {
+    color: #c24d00;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#welcome a:hover {
+    text-decoration: underline;
+}
+
+#welcome ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0 10px;
+}
+
+#welcome li {
+    margin: 6px 0;
+}
+
+#welcome li img {
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+/* === Forms (Signup & Matches) === */
+fieldset {
+    background-color: #d4d0ec;
+    border: 2px solid #999;
+    margin: 10px;
+    padding: 10px;
+    max-width: 550px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+fieldset p {
+    margin: 4px 0;
+}
+
+/* Column alignment for form labels */
+fieldset strong, fieldset .column {
+    display: inline-block;
+    width: 11em;
+    float: left;
+    font-weight: bold;
+    font-size: 13px;
+    clear: left;
+    padding: 4px 0;
+}
+
+fieldset input[type="text"],
+fieldset select {
+    margin: 2px 0;
+}
+
+fieldset input[type="submit"] {
+    background-color: #c24d00;
+    color: #fff;
+    font-weight: bold;
+    border: 2px solid #630a30;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+fieldset input[type="submit"]:hover {
+    background-color: #a33d00;
+}
+
+/* === Signup Success === */
+.success h2 {
+    color: #630a30;
+    margin-left: 10px;
+}
+
+.success p {
+    margin-left: 10px;
+}
+
+.success a {
+    color: #c24d00;
+    text-decoration: none;
+}
+
+.success a:hover {
+    text-decoration: underline;
+}
+
+/* === Match Results === */
+.match {
+    border: 1px solid #999;
+    margin: 10px;
+    padding: 0;
+    max-width: 550px;
+}
+
+.match p {
+    background-color: #c8ddf2;
+    margin: 0;
+    padding: 8px;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.match p img {
+    width: 150px;
+    float: left;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.match ul {
+    list-style-type: none;
+    padding: 6px 10px;
+    margin: 0;
+}
+
+.match ul li strong {
+    display: inline-block;
+    width: 6em;
+    font-weight: bold;
+}
+
+/* === Footer === */
+#footer {
+    font-size: 12px;
+    margin: 20px 0 10px 10px;
+    color: #666;
+}
+
+#footer p {
+    margin: 4px 0;
+}
+
+#footer a {
+    color: #2b9900;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#footer a img {
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+#footer img.w3c {
+    border: 0;
+}
+
+/* === Error messages === */
+.error h2 {
+    color: #c00;
+    margin-left: 10px;
+}
+
+.error p {
+    margin-left: 10px;
+}
+
+/* === Matches Heading === */
+h3 {
+    font-size: 16px;
+    margin: 10px 10px 5px;
+}
