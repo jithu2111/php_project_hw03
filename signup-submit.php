@@ -46,9 +46,12 @@ function validate_signup($data) {
         show_error("You submitted an invalid gender.");
     }
 
-    /* Age must be an integer between 0 and 99 */
+    /* Age must be an integer between 18 and 99 */
     if (!preg_match('/^\d{1,2}$/', $data["age"])) {
         show_error("You submitted an invalid age.");
+    }
+    if ((int) $data["age"] < 18) {
+        show_error("You must be at least 18 years old to sign up.");
     }
 
     /* Personality type must be 4 letters from Keirsey dimensions */

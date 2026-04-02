@@ -65,6 +65,7 @@ generate_header("NerdieLuv - Sign Up");
                 <p>
                     <strong>Photo:</strong>
                     <input type="file" name="photo" />
+                    <span style="font-size:11px; color:#666;">(optional)</span>
                 </p>
 
                 <p>

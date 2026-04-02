@@ -112,11 +112,22 @@ $singles = get_all_singles();
         </div>
 
 <?php
-/* Loop through all singles and display each match */
+/* Loop through all singles and collect matches */
+$matches_found = false;
 foreach ($singles as $other) {
     if ($other["name"] !== $name && is_match($user, $other)) {
         display_match($other);
+        $matches_found = true;
     }
+}
+
+/* Show a message if no matches were found */
+if (!$matches_found) {
+    ?>
+    <p style="margin: 15px 10px; color: #666;">
+        No matches found for <?= $name ?> at this time. Check back later!
+    </p>
+    <?php
 }
 ?>
 
