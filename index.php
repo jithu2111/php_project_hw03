@@ -1,0 +1,25 @@
+<?php
+/*
+ * index.php
+ * NerdieLuv front page.
+ * Displays the site logo, welcome message, and links to
+ * the signup and matches pages.
+ */
+include("common.php");
+generate_header("NerdieLuv");
+?>
+
+        <h2>Welcome!</h2>
+
+        <div id="welcome">
+            <ul>
+                <li>
+                    <a href="signup.php">Sign up for a new account</a>
+                </li>
+                <li>
+                    <a href="matches.php">Check your matches</a>
+                </li>
+            </ul>
+        </div>
+
+<?php generate_footer(); ?>
