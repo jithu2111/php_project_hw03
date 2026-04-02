@@ -2,8 +2,10 @@
 /*
  * matches-submit.php
  * NerdieLuv match results page.
- * Receives the user's name via GET, looks up their record in singles.txt,
- * finds all compatible matches, and displays them.
+ * Receives the user's name via GET, validates input, looks up their
+ * record in singles.txt, finds all compatible matches, and displays them.
+ *
+ * Extra Feature #1: Validates name is not blank and exists in file.
  */
 include("common.php");
 
@@ -83,23 +85,21 @@ function display_match($person) {
 
 /* Read the name from the GET parameter and find the user's record */
 $name = $_GET["name"];
-$user = find_single($name);
-$singles = get_all_singles();
 
 generate_header("NerdieLuv - Matches for $name");
 
-/* If the user was not found in the file, show an error and stop */
-if ($user === null) {
-    ?>
-        <div class="error">
-            <h2>Error! Invalid data.</h2>
-            <p>We're sorry. User &quot;<?= $name ?>&quot; was not found.
-               Please go back and try again.</p>
-        </div>
-    <?php
-    generate_footer();
-    exit;
+/* Validate: name must not be blank */
+if (!preg_match('/^.+$/', $name)) {
+    show_error("You submitted an empty name.");
 }
+
+/* Validate: user must exist in the file */
+$user = find_single($name);
+if ($user === null) {
+    show_error("User \"$name\" was not found in the system.");
+}
+
+$singles = get_all_singles();
 ?>
 
         <h3>Matches for <?= $name ?></h3>

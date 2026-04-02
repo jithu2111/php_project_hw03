@@ -58,6 +58,23 @@ function generate_footer() {
 }
 
 /*
+ * Displays an error page with the given message, outputs the footer,
+ * and exits the script. Used for validation errors.
+ * $message - the error description to display
+ */
+function show_error($message) {
+    ?>
+        <div class="error">
+            <h2>Error! Invalid data.</h2>
+            <p>We're sorry. <?= $message ?>
+               Please go back and try again.</p>
+        </div>
+    <?php
+    generate_footer();
+    exit;
+}
+
+/*
  * Reads the singles.txt file and returns an array of associative arrays.
  * Each element has keys: name, gender, age, type, os, min_age, max_age.
  */
