@@ -14,11 +14,11 @@ generate_header("NerdieLuv");
         <div id="welcome">
             <ul>
                 <li>
-                    <img src="notepad.png" alt="notepad" />
+                    <img src="assets/notepad.png" alt="notepad" />
                     <a href="signup.php">Sign up for a new account</a>
                 </li>
                 <li>
-                    <img src="heart.png" alt="heart" />
+                    <img src="assets/heart.png" alt="heart" />
                     <a href="matches.php">Check your matches</a>
                 </li>
             </ul>

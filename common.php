@@ -47,7 +47,7 @@ function generate_footer() {
             <p>Results and page (C) Copyright NerdLuv Inc.</p>
             <p>
                 <a href="index.php">
-                    <img src="back.png" alt="back" />
+                    <img src="assets/back.png" alt="back" />
                     Back to front page
                 </a>
             </p>
@@ -126,8 +126,8 @@ function get_user_image($name, $gender) {
         return $local_path;
     }
     if ($gender === "M") {
-        return "male.png";
+        return "assets/male.png";
     }
-    return "female.png";
+    return "assets/female.png";
 }
 ?>
