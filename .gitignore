@@ -1,14 +1,7 @@
-spec-extra.pdf
+# Spec/reference files
 spec.pdf
+spec-extra.pdf
+
+# IDE & OS
 .idea
 .DS_Store
-
-singles.txt
-singles2.txt
-
-index.png
-matches.png
-
-all-matches-extra.txt
-all-matches.txt
-
