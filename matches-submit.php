@@ -104,7 +104,12 @@ if ($user === null) {
 $singles = get_all_singles();
 ?>
 
-        <h3>Matches for <?= $name ?></h3>
+
+        <div id="current-user">
+            <img src="<?= get_user_image($user["name"], $user["gender"]) ?>"
+                 alt="<?= $user["name"] ?>" />
+            <h3>Matches for <?= $name ?></h3>
+        </div>
 
 <?php
 /* Loop through all singles and display each match */

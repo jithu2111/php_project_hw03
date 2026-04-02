@@ -228,3 +228,27 @@ h3 {
     font-size: 16px;
     margin: 10px 10px 5px;
 }
+
+/* === Current user profile on matches page === */
+#current-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f0eef8;
+    border: 1px solid #ccc;
+    max-width: 550px;
+}
+
+#current-user img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #999;
+}
+
+#current-user h3 {
+    margin: 0;
+    font-size: 18px;
+}
