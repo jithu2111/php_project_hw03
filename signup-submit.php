@@ -17,13 +17,13 @@ include("common.php");
  */
 function get_signup_data() {
     $data = [];
-    $data["name"]    = $_POST["name"];
-    $data["gender"]  = $_POST["gender"];
-    $data["age"]     = $_POST["age"];
-    $data["type"]    = $_POST["type"];
-    $data["os"]      = $_POST["os"];
-    $data["min_age"] = $_POST["min_age"];
-    $data["max_age"] = $_POST["max_age"];
+    $data["name"]    = isset($_POST["name"])    ? $_POST["name"]    : "";
+    $data["gender"]  = isset($_POST["gender"])  ? $_POST["gender"]  : "";
+    $data["age"]     = isset($_POST["age"])     ? $_POST["age"]     : "";
+    $data["type"]    = isset($_POST["type"])    ? $_POST["type"]    : "";
+    $data["os"]      = isset($_POST["os"])      ? $_POST["os"]      : "";
+    $data["min_age"] = isset($_POST["min_age"]) ? $_POST["min_age"] : "";
+    $data["max_age"] = isset($_POST["max_age"]) ? $_POST["max_age"] : "";
     return $data;
 }
 
@@ -33,6 +33,7 @@ function get_signup_data() {
  * type, valid OS, valid seeking ages, and duplicate users.
  * Calls show_error and exits if any check fails.
  * $data - associative array of submitted form fields
+ * 6
  */
 function validate_signup($data) {
     /* Name must not be blank */

@@ -45,11 +45,7 @@ function generate_footer() {
             </p>
             <p>Results and page (C) Copyright NerdLuv Inc.</p>
             <p>
-                <a href="index.php">
-                    <img src="https://cdn-icons-png.flaticon.com/16/109/109617.png"
-                         alt="back" />
-                    Back to front page
-                </a>
+                <a href="index.php">&#8634; Back to front page</a>
             </p>
         </div>
     </body>
@@ -112,17 +108,21 @@ function find_single($name) {
 }
 
 /*
- * Returns the image path for a given user name.
- * Converts name to lowercase with spaces replaced by underscores
- * and checks if the file exists in images/. Falls back to user.jpg.
+ * Returns the image path for a given user.
+ * Checks for a personal photo in images/ first, then falls back
+ * to a gender-specific default (male.png or female.png).
  * $name - the user's display name
+ * $gender - "M" or "F"
  */
-function get_user_image($name) {
+function get_user_image($name, $gender) {
     $filename = strtolower(str_replace(" ", "_", $name)) . ".jpg";
     $local_path = "images/" . $filename;
     if (file_exists($local_path)) {
         return $local_path;
     }
-    return "user.jpg";
+    if ($gender === "M") {
+        return "male.png";
+    }
+    return "female.png";
 }
 ?>

@@ -71,7 +71,8 @@ function display_match($person) {
     ?>
     <div class="match">
         <p>
-            <img src="<?= get_user_image($person["name"]) ?>" alt="user photo" />
+            <img src="<?= get_user_image($person["name"], $person["gender"]) ?>"
+                 alt="user photo" />
             <?= $person["name"] ?>
         </p>
         <ul>
@@ -85,7 +86,7 @@ function display_match($person) {
 }
 
 /* Read the name from the GET parameter and find the user's record */
-$name = $_GET["name"];
+$name = isset($_GET["name"]) ? $_GET["name"] : "";
 
 generate_header("NerdieLuv - Matches for $name");
 
