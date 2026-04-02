@@ -110,4 +110,19 @@ function find_single($name) {
     }
     return null;
 }
+
+/*
+ * Returns the image path for a given user name.
+ * Converts name to lowercase with spaces replaced by underscores
+ * and checks if the file exists in images/. Falls back to user.jpg.
+ * $name - the user's display name
+ */
+function get_user_image($name) {
+    $filename = strtolower(str_replace(" ", "_", $name)) . ".jpg";
+    $local_path = "images/" . $filename;
+    if (file_exists($local_path)) {
+        return $local_path;
+    }
+    return "user.jpg";
+}
 ?>

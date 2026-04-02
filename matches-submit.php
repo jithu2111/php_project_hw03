@@ -6,6 +6,7 @@
  * record in singles.txt, finds all compatible matches, and displays them.
  *
  * Extra Feature #1: Validates name is not blank and exists in file.
+ * Extra Feature #2: Displays per-user photos from images/ directory.
  */
 include("common.php");
 
@@ -70,7 +71,7 @@ function display_match($person) {
     ?>
     <div class="match">
         <p>
-            <img src="user.jpg" alt="user photo" />
+            <img src="<?= get_user_image($person["name"]) ?>" alt="user photo" />
             <?= $person["name"] ?>
         </p>
         <ul>

@@ -7,6 +7,7 @@
  * to singles.txt. Displays a thank-you message on success.
  *
  * Extra Feature #1: Robust form validation with regex.
+ * Extra Feature #2: User photo upload.
  */
 include("common.php");
 
@@ -96,14 +97,30 @@ function save_user($data) {
     file_put_contents("singles.txt", $line, FILE_APPEND);
 }
 
+/*
+ * Saves the uploaded photo to the images/ directory.
+ * File is named as lowercase name with spaces replaced by underscores.
+ * Sets full permissions so the file can be managed later.
+ * $name - the user's display name
+ */
+function save_photo($name) {
+    if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] === UPLOAD_ERR_OK) {
+        $filename = strtolower(str_replace(" ", "_", $name)) . ".jpg";
+        $dest = "images/" . $filename;
+        move_uploaded_file($_FILES["photo"]["tmp_name"], $dest);
+        chmod($dest, 0777);
+    }
+}
+
 /* Read and validate the submitted form data */
 $user = get_signup_data();
 
 generate_header("NerdieLuv - Sign Up");
 validate_signup($user);
 
-/* Validation passed — save user and show success */
+/* Validation passed — save user data and photo */
 save_user($user);
+save_photo($user["name"]);
 ?>
 
         <div class="success">

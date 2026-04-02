@@ -12,7 +12,8 @@ generate_header("NerdieLuv - Sign Up");
         <fieldset>
             <legend>New User Signup:</legend>
 
-            <form action="signup-submit.php" method="post">
+            <form action="signup-submit.php" method="post"
+                  enctype="multipart/form-data">
                 <p>
                     <strong>Name:</strong>
                     <input type="text" name="name" size="16" maxlength="16" />
@@ -59,6 +60,11 @@ generate_header("NerdieLuv - Sign Up");
                     to
                     <input type="text" name="max_age" size="6" maxlength="2"
                            placeholder="max" />
+                </p>
+
+                <p>
+                    <strong>Photo:</strong>
+                    <input type="file" name="photo" />
                 </p>
 
                 <p>
